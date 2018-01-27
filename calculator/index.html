@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+
+<body>
+  <div class="container">
+    <div class="flexbox col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="calc_body">
+        <div class="col-xs-12">
+          <div class="calc_screen">
+            <div class="row text-center display">
+              <span>0</span>
+            </div>
+            <div class="row text-center operation">
+              <span>0</span>
+            </div>
+          </div>
+          <!-- calc_screen -->
+          <div class="row row1">
+            <div class="col-xs-3">
+              <div class="btn red allClear" value="AC">
+                <span>AC</span>
+              </div>
+            </div>
+            <div class="col-xs-3">
+              <div class="btn red clear" value="C">
+                <span>C</span>
+              </div>
+            </div>
+            <div class="col-xs-3">
+              <div class="btn operand" value="/">
+                <span>&divide;</span>
+              </div>
+            </div>
+            <div class="col-xs-3">
+              <div class="btn operand" value="*">
+                <span>X</span>
+              </div>
+            </div>
+          </div><!-- row 1 -->
+
+          <div class="row row2">
+            <div class="col-xs-3">
+              <div class="btn digit" value="7">
+                <span>7</span>
+              </div>
+            </div>
+            <div class="col-xs-3">
+              <div class="btn digit" value="8">
+                <span>8</span>
+              </div>
+            </div>
+            <div class="col-xs-3">
+              <div class="btn digit" value="9">
+                <span>9</span>
+              </div>
+            </div>
+            <div class="col-xs-3">
+              <div class="btn operand" value="-">
+                <span>-</span>
+              </div>
+            </div>
+          </div><!-- row 2 -->
+
+          <div class="row row3">
+            <div class="col-xs-3">
+              <div class="btn digit" value="4">
+                <span>4</span>
+              </div>
+            </div>
+            <div class="col-xs-3">
+              <div class="btn digit" value="5">
+                <span>5</span>
+              </div>
+            </div>
+            <div class="col-xs-3">
+              <div class="btn digit" value="6">
+                <span>6</span>
+              </div>
+            </div>
+            <div class="col-xs-3">
+              <div class="btn operand" value="+">
+                <span>+</span>
+              </div>
+            </div>
+          </div><!-- row 3 -->
+
+          <div class="row row4">
+            <div class="col-xs-3">
+              <div class="btn digit" value="1">
+                <span>1</span>
+              </div>
+            </div>
+            <div class="col-xs-3">
+              <div class="btn digit" value="2">
+                <span>2</span>
+              </div>
+            </div>
+            <div class="col-xs-3">
+              <div class="btn digit" value="3">
+                <span>3</span>
+              </div>
+            </div>
+            <div class="col-xs-3">
+              <div class="btn decimal" value=".">
+                <span>.</span>
+              </div>
+            </div>
+          </div><!-- row 4 -->
+          <div class="row row5">
+            <div class="col-xs-6">
+            <div class="btn digit" value="0">
+                <span>0</span>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <button class="btn equals" value="=">
+                <span>=</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- calc_body -->
+      </div>
+    </div>
+    <script
+  src="http://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>
