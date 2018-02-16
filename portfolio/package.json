@@ -1,0 +1,15 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Jonathan Furr's web development portfolio",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jonfurr/freecodecamp/tree/master/portfolio"
+  },
+  "author": "Jonathan Furr",
+  "license": "ISC"
+}

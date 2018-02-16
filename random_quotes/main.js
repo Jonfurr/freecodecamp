@@ -73,6 +73,9 @@
 // $(document).ready(function(){
 // 	randomize();
 // });
+var json;
+var fahrenheit;
+var celsius;
 if (navigator.geolocation) {
   //Return the user's longitude and latitude on page load using HTML5 geolocation API
   window.onload = function() {
@@ -83,33 +86,45 @@ if (navigator.geolocation) {
       var lat = currentPosition.coords.latitude;
       var long = currentPosition.coords.longitude;
       var url = "https://fcc-weather-api.glitch.me/api/current?lat=" +
-          lat +"&lon=" +long;
+        lat + "&lon=" + long;
       $.getJSON("https://fcc-weather-api.glitch.me/api/current?lat=" +
-          lat +"&lon=" +long, 
-          function(data) {
-          	var rawJson = JSON.stringify(data);
-          	var json = JSON.parse(rawJson);
-          	var city = json.name + ",";
-          	var country = json.sys.country;
-          	var description = json.weather[0].description.split(' ');
-            for (var i=0;i<description.length;i++){
-            	description[i] = description[i].split('');
-            	description[i][0] = description[i][0].toUpperCase();
-            	description[i] = description[i].join('');
-            }
-            description = description.join(" ");
-          	var icon = json.weather[0].icon;
-          	var celsius = json.main.temp;
-          	var fahrenheit = (1.8 * celsius) + 32;
-          	$(".city").text(city);
-          	$(".country").text(country);
-          	$(".temp").html("<span>"+Math.round(fahrenheit)+"<span>&#176; <button id='tempDeg' style='-webkit-appearance: none;background: transparent;border: none;color:#0000cc;'>F</button></span></span>");
-          	$(".adjective").text(description);
-          	$(".icon-wrap").html("<img src="+icon+">");
-
-      	  });
+        lat + "&lon=" + long,
+        function(data) {
+          var rawJson = JSON.stringify(data);
+          json = JSON.parse(rawJson);
+          var city = json.name + ",";
+          var country = json.sys.country;
+          var description = json.weather[0].description.split(' ');
+          for (var i = 0; i < description.length; i++) {
+            description[i] = description[i].split('');
+            description[i][0] = description[i][0].toUpperCase();
+            description[i] = description[i].join('');
+          }
+          description = description.join(" ");
+          var icon = json.weather[0].icon;
+          celsius = json.main.temp;
+          fahrenheit = (1.8 * celsius) + 32;
+          $(".city").text(city);
+          $(".country").text(country);
+          $(".temp").text(Math.round(fahrenheit)+"°F");
+          $(".adjective").text(description);
+          $(".icon-wrap").html("<img src=" + icon + ">");
+          $('.content-body').addClass('in');
+        });
     }
     navigator.geolocation.getCurrentPosition(getCurrentLocation);
-    $(".content-body").addClass("in");
   };
 }
+
+$(".degButton").click(function() {
+  if ($(".temp").hasClass("fahr")) {
+    $(".temp").text(Math.round(celsius));
+    $(this).text("°C");
+    $(".temp").toggleClass("fahr");
+  } else {
+
+    $(".temp").text(Math.round(fahrenheit));
+    $(this).text("°F");
+    $(".temp").toggleClass("fahr");
+  }
+});
