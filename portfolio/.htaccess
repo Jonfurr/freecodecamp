@@ -1,0 +1,44 @@
+
+RewriteEngine on
+DirectoryIndex index.html
+
+RewriteCond %{HTTP_REFERER} !^http://jonfurr.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://jonfurr.com$      [NC]
+
+RewriteCond %{HTTP_REFERER} !^http://www.jonfurr.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.jonfurr.com$      [NC]
+
+RewriteCond %{HTTP_REFERER} !^https://jonfurr.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://jonfurr.com$      [NC]
+
+RewriteCond %{HTTP_REFERER} !^https://www.jonfurr.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.jonfurr.com$      [NC]
+
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+
+
+<IfModule mod_headers.c>
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+    Header set X-XSS-Protection "1; mode=block"
+    Header always append X-Frame-Options SAMEORIGIN
+    Header set X-Content-Type-Options nosniff
+</IfModule>
+
+<IfModule mod_mime.c>
+    AddType image/png .png
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access 1 year"
+    ExpiresByType image/jpeg "access 1 year"
+    ExpiresByType image/gif "access 1 year"
+    ExpiresByType image/png "access 1 month"
+    ExpiresByType text/css "access 1 month"
+    ExpiresByType text/html "access 1 month"
+    ExpiresByType application/pdf "access 1 month"
+    ExpiresByType text/x-javascript "access 1 month"
+    ExpiresByType image/x-icon "access 1 year"
+    ExpiresDefault "access 1 month"
+</IfModule>

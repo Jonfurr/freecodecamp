@@ -1,0 +1,15 @@
+{
+  "name": "learnnode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "module.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bl": "^1.2.1",
+    "through2-map": "^3.0.0"
+  }
+}
