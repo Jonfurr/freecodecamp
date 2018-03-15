@@ -1,8 +1,33 @@
 {
-    "name": "Jonathan Furr",
-    "social_media": {
-        "facebook": "https:facebook.com/jonfurr",
-        "twitter": "https:twitter.com/jonfurr"
-    },
-    "avatar_url": "~/assets/img/avatar.jpg"
+  "login": "Jonfurr",
+  "id": 13457612,
+  "avatar_url": "https://avatars1.githubusercontent.com/u/13457612?v=4",
+  "gravatar_id": "",
+  "url": "https://api.github.com/users/Jonfurr",
+  "html_url": "https://github.com/Jonfurr",
+  "followers_url": "https://api.github.com/users/Jonfurr/followers",
+  "following_url":
+    "https://api.github.com/users/Jonfurr/following{/other_user}",
+  "gists_url": "https://api.github.com/users/Jonfurr/gists{/gist_id}",
+  "starred_url": "https://api.github.com/users/Jonfurr/starred{/owner}{/repo}",
+  "subscriptions_url": "https://api.github.com/users/Jonfurr/subscriptions",
+  "organizations_url": "https://api.github.com/users/Jonfurr/orgs",
+  "repos_url": "https://api.github.com/users/Jonfurr/repos",
+  "events_url": "https://api.github.com/users/Jonfurr/events{/privacy}",
+  "received_events_url": "https://api.github.com/users/Jonfurr/received_events",
+  "type": "User",
+  "site_admin": false,
+  "name": "Jonathan Furr",
+  "company": null,
+  "blog": "http://www.jonfurr.com",
+  "location": "Los Angeles, CA",
+  "email": null,
+  "hireable": true,
+  "bio": null,
+  "public_repos": 28,
+  "public_gists": 0,
+  "followers": 3,
+  "following": 8,
+  "created_at": "2015-07-22T20:19:54Z",
+  "updated_at": "2018-02-13T16:01:52Z"
 }

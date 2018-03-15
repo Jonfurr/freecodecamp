@@ -4,8 +4,11 @@ html {
   /* Colors */
   --orange: #fdac52;
   --light-blue: #f0f8ff;
-  --dark-blue: #26c6da;
-  --grey: #555;
+  --blue: #26c6da;
+  --gray: #555;
+  --white: #e8e8e8;
+  --black:  #2f2f2f; 
+  --drop-shadow: drop-shadow(3px 3px 3px var(--orange));
 }
 
 body {
@@ -18,7 +21,7 @@ body {
 }
 
 a {
-  color: var(--dark-blue);
+  color: var(--blue);
   transition: all .3s ease;
 }
 a:hover {
@@ -28,7 +31,7 @@ a:hover {
 p {
   font-size: 1rem;
   line-height: 1.7;
-  color: var(--grey);
+  color: var(--gray);
 }
 
 a:focus,
@@ -37,14 +40,16 @@ a:hover {
 }
 
 header {
-  display: none;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
 }
 
 /* Bootstrap Overrides */
 
 .btn-primary {
   color: var(--light-blue);
-  background-color: var(--dark-blue);
+  background-color: var(--blue);
   border-color: var(--light-blue);
   border-radius: 0;
   transform: perspective(1px) translateZ(0);
@@ -58,9 +63,9 @@ header {
 
 .btn-primary:hover {
   color: var(--light-blue);
-  background-color: var(--dark-blue);
+  background-color: var(--blue);
   border-color: var(--light-blue);
-  outline: 2px solid var(--dark-blue);
+  outline: 2px solid var(--blue);
   outline-offset: 2px;
 }
 
@@ -70,7 +75,7 @@ header {
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 0px;
-  background: var(--dark-blue);
+  background: var(--blue);
   border-color: transparent;
   border-bottom: 2px solid var(--orange);
 }
@@ -157,7 +162,7 @@ header {
 /* Content Sections */
 
 section {
-  min-height: 500px;
+  min-height: 100vh;
   position: relative;
   display: flex;
   align-content: center;
@@ -186,16 +191,16 @@ footer::after {
 /* Hero Section */
 
 #hero {
-  display: flex;
-  justify-content: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  background-image: url(assets/img/background-1.jpg);
-  background-color: var(--light-blue);
-  transition: all 0.3s ease-in-out;
-  background-size: cover;
-  background-blend-mode: multiply;
-  height: 115vh;
+ display: flex;
+ justify-content: center;
+ padding-top: 50px;
+ padding-bottom: 50px;
+ background-image: url(assets/img/background-1.jpg);
+ background-color: rgba(0, 0, 0, .25);
+ transition: all 0.3s ease-in-out;
+ background-size: cover;
+ background-blend-mode: multiply;
+
 }
 
 #hero::after {
@@ -213,45 +218,46 @@ footer::after {
   z-index: -1;
 }
 
+
+.hero-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
 .hero-image {
-  background-image: url(assets/img/avatar.jpg);
+  background-image: url(/assets/img/avatar.jpg);
   background-size: cover;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
-  top: 5px;
-  z-index: 1;
   border-radius: 50%;
-  border: 3px solid var(--dark-blue);
+  border: 3px solid var(--blue);
   background-position: center;
+  width: 212px;
+  height: 212px;
+
 }
 
 .hero-image img {
   border-radius: 50%;
-  border: 3px solid var(--light-blue);
-  box-shadow: 0px 2px 4px 0px #555;
-}
-
-.hero-text:before,
-.hero-text:after {
-  width: auto;
-  height: auto;
-  border-top: 100px solid #000;
-  border-right: 100px solid transparent;
-  position: relative;
-  top: -20px;
+  border: 3px solid var(--blue);
+  filter: var(--drop-shadow);
 }
 
 .hero-text {
-  transform: rotate(-14deg);
+  font-family: "Rock Salt";
+  text-align: center;
+  -webkit-text-stroke: 1px var(--black);
+  text-shadow: 2px 2px 2px var(--black);
+  color: var( --blue);
 }
-.hero-text svg {
-  border: 3px solid var(--dark-blue);
+
+.hero-text h1 span {
+  transform:rotate(-14deg);
 }
 
 /* Projects Section */
 #projects {
-  background-color: var(--dark-blue);
+  background-color: var(--blue);
   padding: 50px 0;
   border-bottom: 2px solid var(--orange);
   z-index: 1;
@@ -347,16 +353,16 @@ footer::after {
 /* Contact Section */
 #contact .section-heading {
   font-family: "Rock Salt", cursive;
-  color: var(--grey);
+  color: var(--gray);
   font-size: 2rem;
-  border-bottom: 2px solid var(--grey);
+  border-bottom: 2px solid var(--gray);
   padding-bottom: 10px;
   margin-bottom: 30px;
 }
 
 /* Footer Section */
 footer {
-  background-color: var(--dark-blue);
+  background-color: var(--blue);
   display: flex;
   align-items: center;
   padding: 20px 0;
@@ -408,179 +414,10 @@ footer a:hover {
   color: var(--light-blue);
 }
 
-.top-btn {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: var(--light-blue);
-  border: 2px solid var(--orange);
-  z-index: 2;
-  position: fixed;
-  bottom: 50px;
-  right: 50px;
-  opacity: 0.5;
+.hidden {
   display: none;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  transition: opacity 0.3s ease;
-}
-.top-btn:hover {
-  opacity: 1;
-}
-
-.top-btn i {
-  color: var(--dark-blue);
-  text-shadow: 2px 2px 0 var(--orange);
-  margin: -15px 0;
-}
-
-/* #hero img {
-  animation-duration: 1s;
-  animation-name: elementAppear;
   opacity: 0;
-} */
-
-/* ========================
-   Animation Definitions
-======================== */
-/* 
-@keyframes elementAppear {
-  from {
-
-    transform: translateY(100px);
-  }
-  25% {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-} */
-
-/* The Overlay (background) */
-
-.overlay {
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.9);
-  overflow-x: hidden;
-  transition: 0.5s;
-  background-image: url(assets/img/background-1.jpg);
-  background-size: cover;
-  filter: none;
-}
-
-/* Position the content inside the overlay */
-
-.overlay-content {
-  position: absolute;
-  top: 25%;
-  bottom: 50%;
-  width: 100%;
-  text-align: center;
-}
-
-.overlay-content .hero-image {
-  background-blend-mode: lighten;
-  background-image: url(assets/img/avatar.jpg);
-  background-size: cover;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  z-index: 1;
-  border-radius: 50%;
-  border: 3px solid var(--dark-blue);
-  background-position: center;
-}
-
-.overlay-content .hero-image img {
-  mix-blend-mode: lighten;
-}
-
-/* Position the close button (top right corner) */
-
-.overlay .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
-}
-
-.side-nav {
-  position: fixed;
-  left: -10%;
-  top: 50%;
-  transform: translate(0, -50%);
-  width: 0;
-  height: 100%;
-  background-color: #000;
-  z-index: 1;
-  border: 3px solid var(--orange);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.5s ease;
-}
-
-.side-nav ul {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-left: 0;
-  list-style: none;
-}
-
-.side-nav ul li {
-  flex: 0 1 auto;
-  width: 100%;
-  font-size: 2rem;
-  font-family: "Rock Salt";
-  text-align: center;
-  color: var(--dark-blue);
+  visibility: hidden;
   transition: all .3s ease;
-  padding: 25px;
-  display: none;
 }
 
-.side-nav ul li:hover {
-  color: var(--orange) ;
-}
-
-.side-nav.in {
-  width: 100%;
-  left: 0;
-}
-.side-nav.in li {
-  display: flex;
-  justify-content: center;
-}
-
-.side-button-wrap {
-  position: fixed;
-  top: 50%;
-  left: 15px;
-  transform: translateY(-50%);
-  background: transparent;
-}
-
-.side-button-wrap i {
-  font-size: 3.5rem;
-  color: var(--dark-blue);
-  -webkit-text-stroke: #000;
-  -webkit-text-stroke-width: 2px;
-}
-.side-button-wrap.in {
-  z-index: 1;
-}
